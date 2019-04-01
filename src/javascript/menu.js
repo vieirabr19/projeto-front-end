@@ -1,37 +1,38 @@
-;(function(){
+;
+(function() {
 
     'use strict';
 
-    let $btn = document.querySelector('.header-nav__hamburgger'),
-        $html = document.querySelector('html'),
+    let $html = document.querySelector('html'),
+        $btn = document.querySelector('.header-nav__hamburgger'),
         $menuList = document.querySelector('#mainMenu'),
         menuOpened = 'menu-opened',
         menuOpenedToggle = false;
 
-    $html.addEventListener('click', function(e){
-        if(e.target === $html && menuOpenedToggle){
+    $html.addEventListener('click', function(e) {
+        if (e.target === $html && menuOpenedToggle) {
             closeMenu();
         }
     });
 
     $btn.addEventListener('click', toggleMenu);
 
-    function toggleMenu(){
-        if(menuOpenedToggle){
+    function toggleMenu() {
+        if (menuOpenedToggle) {
             closeMenu();
-        }else{
+        } else {
             openMenu();
         }
     }
 
-    function closeMenu(){
+    function closeMenu() {
         menuOpenedToggle = false;
         $html.classList.remove(menuOpened);
         $menuList.setAttribute('aria-expanded', false);
         $btn.setAttribute('aria-expanded', false);
     }
 
-    function openMenu(){
+    function openMenu() {
         menuOpenedToggle = true;
         $html.classList.add(menuOpened);
         $menuList.setAttribute('aria-expanded', true);
