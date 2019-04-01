@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Site pessoal de Luiz Vieira</title>
+
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    @@include('./inc/nav.html')
+
+    <div class="jumbotron header-animado">
+        <div class="container">
+            <p class="header-animado__title">Olá, tudo bem!</p>
+            <h1 class="header-animado__subtitle">Eu sou Luiz Vieira, Webdesiner, Front-end e apreciador de café!</h1>
+        </div>
+
+        <div class="header-animado__helicoptero"><img src="imagens/cenario_helicoptero.png" alt=""></div>
+
+        <div class="header-animado__ilustra">
+            <div class="nuvens"></div>
+            <div class="casas"></div>
+            <div class="rua"></div>
+            <div class="carrosCima"></div>
+            <div class="carrosBaixo"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Últimos trabalho</h2>
+            </div>
+
+            @@loop('./inc/card-portfolio.html', [
+            {
+            "title": "Titulo do projeto 1",
+            "imagem": "imagens/portfolio/01.jpg",
+            "texto": "Pequena texto 1",
+            "link": "#"
+            },
+            {
+            "title": "Titulo do projeto 2",
+            "imagem": "imagens/portfolio/02.jpg",
+            "texto": "Pequena texto 2",
+            "link": "#"
+            },
+            {
+            "title": "Titulo do projeto 3",
+            "imagem": "imagens/portfolio/03.jpg",
+            "texto": "Pequena texto 3",
+            "link": "#"
+            }
+            ])
+
+        </div>
+    </div>
+
+    @@include('./inc/footer.html')
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/menu.js"></script>
+</body>
+
+</html>

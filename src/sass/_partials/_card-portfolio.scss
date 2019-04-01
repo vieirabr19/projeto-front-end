@@ -1,0 +1,68 @@
+.card-portfolio{
+    padding: 0;
+    position: relative;
+    background: white;
+
+    &%sombras{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 50%;
+        height: 20px;
+        bottom: 12px;
+        box-shadow: 0 15px 10px #777;
+    }
+
+    @mixin sombras($dir, $rotate, $distance) {
+        transform: rotate($rotate);
+        @if $dir == 'left' {
+            left: $distance;
+        }@else{
+            right: $distance;
+        }
+    }
+
+    &:before{
+        @extend %sombras;
+        @include sombras('left', -3deg, 6px);
+    }
+    &:after{
+        @extend %sombras;
+        @include sombras('right', 3deg, 6px);
+    }
+
+    &__imagem{
+        height: 230px;
+        overflow: hidden;
+
+        img{
+            opacity: .5;
+            transition: opacity .3s linear, transform .7s ease-in-out;
+        }
+    }
+
+    &:hover{
+        img{
+            opacity: 1;
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        .card-portfolio__btn{
+            background: $main_color;
+            color: white;
+            &:hover{
+                background: saturate($main_color, 30%);
+            }
+        }
+    }
+
+    &__btn{
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        margin-left: auto;
+        display: block;
+        color: $main_color;
+        width: 80px;
+    }
+}

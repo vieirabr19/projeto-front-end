@@ -1,0 +1,100 @@
+.header-animado {
+    $h: 300px;
+    $largura_cenario: 2400px;
+    
+    position: relative;
+    background-color: $main-color;
+    padding: 96px 0 0 0;
+    margin-bottom: 0;
+
+    .header-animado__title{
+        color: #00151a;
+        font-size: 38px;
+    }
+
+    .header-animado__subtitle{
+        color: white;
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+    @keyframes anima_helicoptero {
+        0%{left: 0%; top: 20%;transform:rotate(0deg)}
+        33%{left: 30%; top: 35%;transform:rotate(40deg);}
+        66%{left: 60%; top: 40%;transform:rotate(30deg);}
+        100%{left: 90%; top: 10%;transform:rotate(20deg);}
+    }
+
+    &__helicoptero{
+        display: none;
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        animation: anima_helicoptero 20s linear infinite reverse;
+    }
+
+    &__ilustra{
+        background-image: url(../imagens/cenario_all_960.png);
+        background-size: auto 100%;
+        background-position: center top;
+        height: $h / 2;        
+        overflow: hidden;
+
+        & > div{
+            display: none;
+        }
+
+        @media screen and (min-width: 480px){
+            background-image: url(../imagens/cenario_all_1530.png);
+        }
+
+        @media screen and (min-width: 960px){
+            background-image: url(../imagens/cenario_bg.png);
+            height: $h;
+            position: relative;
+
+            & > div{
+                display: block;
+                height: 100%;
+                width: $largura_cenario * 2;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            @keyframes anima_cenarios {
+                from{
+                    transform: translateX(-50%);
+                }
+                to{
+                    transform: translateX(0%);
+                }
+            }
+
+            @mixin anima($imagem, $tipo_valor: '90s linear infinite reverse') {
+                background-image: url(../imagens/#{$imagem});
+                animation: anima_cenarios #{$tipo_valor};
+            }
+
+            $itens: (
+                nuvens: null,
+                casas: '30s linear infinite reverse',
+                rua: '30s linear infinite reverse',
+                carrosCima: '15s linear infinite reverse',
+                carrosBaixo: '15s linear infinite'
+            );
+
+            @each $key, $valor in $itens {
+                @if $valor {
+                    .#{$key}{
+                        @include anima('cenario_#{$key}.png', #{$valor});
+                    }
+                } @else{
+                    .#{$key}{
+                        @include anima('cenario_#{$key}.png');
+                    }
+                }
+            }            
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.footer{
+    background: lighten($main_color, 20%);
+    padding: 10px 0;
+    margin-top: 50px;
+    color: white;
+
+    ul{
+        margin: 0;
+        width: 100%;
+        li{
+            width: 20%;
+            float: left;
+            text-align: right;
+            a{
+                display: block;
+                color: white;
+                font-size: 2em;
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Site pessoal de Luiz Vieira</title>
+
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contato.css">
+</head>
+
+<body>
+    @@include('./inc/nav.html')
+
+    <div class="jumbotron header-animado text-center">
+        <div class="container">
+            <p class="header-animado__title">Vamos batera um papo</p>
+            <h1 class="header-animado__subtitle">Entre em contato que eu responderei o mais breve possível</h1>
+        </div>
+
+        <div class="header-animado__helicoptero"><img src="imagens/cenario_helicoptero.png" alt=""></div>
+
+        <div class="header-animado__ilustra">
+            <div class="nuvens"></div>
+            <div class="casas"></div>
+            <div class="rua"></div>
+            <div class="carrosCima"></div>
+            <div class="carrosBaixo"></div>
+        </div>
+    </div>
+
+    <div class="container contato">
+        <div class="row">
+            <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+                <form>
+                    <div class="form-group">
+                      <label for="textNme">Nome</label>
+                      <input type="text" class="form-control" id="textNme" placeholder="Nome Completo">
+                    </div>
+                    <div class="form-group">
+                      <label for="emain">E-mail</label>
+                      <input type="email" class="form-control" id="emain" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                      <label for="mensagem">Mensagem</label>
+                      <textarea id="mensagem" class="form-control" placeholder="Mensagem"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Enviar</button>
+                  </form>
+            </div>                       
+        </div>
+    </div>
+
+    @@include('./inc/footer.html')
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/menu.js"></script>
+</body>
+
+</html>

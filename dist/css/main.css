@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h5, .title {
+  font-family: 'Open Sans', Arial, sans-serif; }
+
+img {
+  max-width: 100%;
+  border: none; }
+
+.js.menu-opened {
+  position: relative; }
+  @media screen and (max-width: 680px) {
+    .js.menu-opened {
+      overflow: hidden; }
+      .js.menu-opened:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 50px;
+        background: rgba(0, 0, 0, 0.5); } }
+
+.header-nav {
+  background-color: #84b8af; }
+  .js .header-nav {
+    height: 50px; }
+    .js .header-nav .container {
+      height: 100%; }
+    @media screen and (max-width: 680px) {
+      .js .header-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 15; } }
+  .header-nav__logo {
+    z-index: 10;
+    display: inline-block;
+    max-width: 350px;
+    height: 50px;
+    position: relative;
+    top: 10px; }
+    .header-nav__logo img {
+      height: 100%; }
+  .header-nav__hamburgger {
+    display: none; }
+    .js .header-nav__hamburgger {
+      display: block;
+      float: right;
+      height: 100%;
+      border: none;
+      background: transparent;
+      color: white;
+      outline: none;
+      font-size: 2em;
+      padding: 0 .5em; }
+      .js .header-nav__hamburgger:hover, .js .header-nav__hamburgger:focus {
+        background: #74aea5; }
+      @media screen and (min-width: 680px) {
+        .js .header-nav__hamburgger {
+          display: none; } }
+  .header-nav__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .header-nav__menu li {
+      display: block; }
+      .header-nav__menu li a {
+        color: white;
+        display: block;
+        font-size: 1.5em;
+        padding: .5em;
+        border-top: 1px solid #4f877e; }
+        .header-nav__menu li a:hover {
+          background: #5c9e93; }
+    @media screen and (min-width: 680px) {
+      .header-nav__menu {
+        float: right; }
+        .header-nav__menu li {
+          display: inline-block; }
+          .header-nav__menu li a {
+            border: none; } }
+    @media screen and (max-width: 680px) {
+      .js .header-nav__menu {
+        position: fixed;
+        z-index: 1;
+        top: 50px;
+        left: -100%;
+        width: 80%;
+        height: 100%;
+        transition: left .3s ease-out;
+        background: #a5cac4;
+        padding: 10px; } }
+    .menu-opened .header-nav__menu {
+      left: 0; }
+
+.header-animado {
+  position: relative;
+  background-color: #64a59a;
+  padding: 96px 0 0 0;
+  margin-bottom: 0; }
+  .header-animado .header-animado__title {
+    color: #00151a;
+    font-size: 38px; }
+  .header-animado .header-animado__subtitle {
+    color: white;
+    font-size: 30px;
+    font-weight: 300; }
+
+@-webkit-keyframes anima_helicoptero {
+  0% {
+    left: 0%;
+    top: 20%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  33% {
+    left: 30%;
+    top: 35%;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg); }
+  66% {
+    left: 60%;
+    top: 40%;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg); }
+  100% {
+    left: 90%;
+    top: 10%;
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg); } }
+
+@keyframes anima_helicoptero {
+  0% {
+    left: 0%;
+    top: 20%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  33% {
+    left: 30%;
+    top: 35%;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg); }
+  66% {
+    left: 60%;
+    top: 40%;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg); }
+  100% {
+    left: 90%;
+    top: 10%;
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg); } }
+  .header-animado__helicoptero {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    animation: anima_helicoptero 20s linear infinite reverse; }
+  .header-animado__ilustra {
+    background-image: url(../imagens/cenario_all_960.png);
+    background-size: auto 100%;
+    background-position: center top;
+    height: 150px;
+    overflow: hidden; }
+    .header-animado__ilustra > div {
+      display: none; }
+    @media screen and (min-width: 480px) {
+      .header-animado__ilustra {
+        background-image: url(../imagens/cenario_all_1530.png); } }
+    @media screen and (min-width: 960px) {
+      .header-animado__ilustra {
+        background-image: url(../imagens/cenario_bg.png);
+        height: 300px;
+        position: relative; }
+        .header-animado__ilustra > div {
+          display: block;
+          height: 100%;
+          width: 4800px;
+          position: absolute;
+          top: 0;
+          left: 0; }
+      @-webkit-keyframes anima_cenarios {
+        from {
+          -webkit-transform: translateX(-50%);
+                  transform: translateX(-50%); }
+        to {
+          -webkit-transform: translateX(0%);
+                  transform: translateX(0%); } }
+      @keyframes anima_cenarios {
+        from {
+          -webkit-transform: translateX(-50%);
+                  transform: translateX(-50%); }
+        to {
+          -webkit-transform: translateX(0%);
+                  transform: translateX(0%); } }
+        .header-animado__ilustra .nuvens {
+          background-image: url(../imagens/cenario_nuvens.png);
+          animation: anima_cenarios 90s linear infinite reverse; }
+        .header-animado__ilustra .casas {
+          background-image: url(../imagens/cenario_casas.png);
+          animation: anima_cenarios 30s linear infinite reverse; }
+        .header-animado__ilustra .rua {
+          background-image: url(../imagens/cenario_rua.png);
+          animation: anima_cenarios 30s linear infinite reverse; }
+        .header-animado__ilustra .carrosCima {
+          background-image: url(../imagens/cenario_carrosCima.png);
+          animation: anima_cenarios 15s linear infinite reverse; }
+        .header-animado__ilustra .carrosBaixo {
+          background-image: url(../imagens/cenario_carrosBaixo.png);
+          -webkit-animation: anima_cenarios 15s linear infinite;
+                  animation: anima_cenarios 15s linear infinite; } }
+
+.card-portfolio {
+  padding: 0;
+  position: relative;
+  background: white; }
+  .card-portfolio:before, .card-portfolio:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 20px;
+    bottom: 12px;
+    box-shadow: 0 15px 10px #777; }
+  .card-portfolio:before {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+    left: 6px; }
+  .card-portfolio:after {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+    right: 6px; }
+  .card-portfolio__imagem {
+    height: 230px;
+    overflow: hidden; }
+    .card-portfolio__imagem img {
+      opacity: .5;
+      transition: opacity .3s linear, -webkit-transform .7s ease-in-out;
+      transition: opacity .3s linear, transform .7s ease-in-out;
+      transition: opacity .3s linear, transform .7s ease-in-out, -webkit-transform .7s ease-in-out; }
+  .card-portfolio:hover img {
+    opacity: 1;
+    -webkit-transform: scale(1.2) rotate(-5deg);
+            transform: scale(1.2) rotate(-5deg); }
+  .card-portfolio:hover .card-portfolio__btn {
+    background: #64a59a;
+    color: white; }
+    .card-portfolio:hover .card-portfolio__btn:hover {
+      background: #3fcab2; }
+  .card-portfolio__btn {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    margin-left: auto;
+    display: block;
+    color: #64a59a;
+    width: 80px; }
+
+.footer {
+  background: #a5cac4;
+  padding: 10px 0;
+  margin-top: 50px;
+  color: white; }
+  .footer ul {
+    margin: 0;
+    width: 100%; }
+    .footer ul li {
+      width: 20%;
+      float: left;
+      text-align: right; }
+      .footer ul li a {
+        display: block;
+        color: white;
+        font-size: 2em; }
