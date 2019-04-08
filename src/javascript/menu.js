@@ -3,7 +3,7 @@
 
     'use strict';
 
-    let $html = document.querySelector('html'),
+    var $html = document.querySelector('html'),
         $btn = document.querySelector('.header-nav__hamburgger'),
         $menuList = document.querySelector('#mainMenu'),
         menuOpened = 'menu-opened',
