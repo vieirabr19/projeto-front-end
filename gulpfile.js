@@ -11,7 +11,7 @@ let gulp = require('gulp'),
     rename = require('gulp-rename'),
     browserSync = require('browser-sync');
 
-
+// Teste na branch2
 gulp.task('clean', () => {
     return gulp.src('./dist')
         .pipe(clean());
