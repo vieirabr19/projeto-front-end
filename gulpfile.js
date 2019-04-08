@@ -8,6 +8,7 @@ let gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     browserSync = require('browser-sync');
 
 
@@ -54,12 +55,18 @@ gulp.task('build-js', () => {
     return gulp.src('./src/javascript/**/*')
         .pipe(concat('app.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/javascript/'))
+        .pipe(gulp.dest('./dist/javascript/'));
 });
 
-gulp.task('default', gulp.parallel('copy', (done) => {
-    return gulp.start('uncss','imagemin','sass','build-js');
-    done();
+gulp.task('svgmin', () => {
+    return gulp.src(['./src/inc/icons/*.svg','!./src/inc/icons/*.min.svg'])
+        .pipe(imagemin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('./src/inc/icons/'));
+});
+
+gulp.task('default', gulp.series('copy', () => {
+    gulp.start('uncss','imagemin','sass','build-js');
 }));
 
 gulp.task('server', () => {
@@ -73,4 +80,5 @@ gulp.task('server', () => {
     gulp.watch('./src/sass/**/*.scss', gulp.series('sass'));
     gulp.watch('./src/**/*.html', gulp.series('html'));
     gulp.watch('./src/javascript/**/*.js', gulp.series('build-js'));
+    gulp.watch(['./src/inc/icons/*.svg','!./src/inc/icons/*.min.svg'], gulp.series('svgmin'));
 });

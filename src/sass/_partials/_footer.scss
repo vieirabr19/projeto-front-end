@@ -13,8 +13,11 @@
             text-align: right;
             a{
                 display: block;
-                color: white;
                 font-size: 2em;
+                fill: white;
+                &:hover{
+                    fill: darken($main-color, 10);
+                }
             }
         }
     }
