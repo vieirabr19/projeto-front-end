@@ -56,6 +56,11 @@
             outline: none;
             font-size: 2em;
             padding: 0 .5em;
+            cursor: pointer;
+            svg{
+                fill: white;
+                margin-top: 10px;
+            }
 
             &:hover, &:focus{
                 background: lighten($main-color, 5%);
