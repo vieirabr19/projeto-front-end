@@ -10,7 +10,7 @@
   "author": "Luiz Vieira",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.4.0"
+    "bootstrap": "^3.4.1"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
